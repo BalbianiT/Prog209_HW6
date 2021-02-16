@@ -23,10 +23,22 @@ app.get('/', function(req, res) {
 });
 
 // about page 
+app.get('/movies', function(req, res) {
+    let movie1 = req.param('Movie 1');
+    let movie2 = req.param('Movie 2');
+    let movie3 = req.param('Movie 3');
+    let movie4 = req.param('Movie 4');
+    res.render('pages/movies', {
+        movie1: movie1,
+        movie2: movie2,
+        movie3: movie3,
+        movie4: movie4
+    });
+});
+
 app.get('/about', function(req, res) {
     res.render('pages/about');
 });
-
 
 // upLoadData page 
 // sending a get with 1 param
